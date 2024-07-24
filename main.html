@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Página</title>
+</head>
+<body>
+    <form id="myForm">
+        <label for="pessoa">Pessoa:</label>
+        <select id="pessoa" name="pessoa">
+            <option value="I">I</option>
+            <option value="you">You</option> 
+        </select>
+
+        <label for="verbo">Verbo:</label>
+        <select id="verbo" name="verbo">
+            <option value="eat">Eat</option>
+            <option value="drink">Drink</option>
+        </select>
+
+        <label for="o_que">O que?</label>
+        <select id="o_que" name="o que?">
+            <option value="bread">bread</option>
+            <option value="water">water</option>
+        </select>
+
+        <label for="com_quem">Com quem?</label>
+        <select id="com_quem" name="com quem">
+            <option value="with my">with my</option>
+            <option value="with your">with your</option>
+        </select>
+
+        <label for="complemento">Complemento</label>
+        <select id="complemento" name="completmento">
+            <option value="father">father</option>
+            <option value="mother">mother</option>
+        </select>
+
+        <label for="onde">onde?</label>
+        <select id="onde" name="onde">
+            <option value="at home">at home</option>
+            <option value="at school">at school</option>
+        </select>
+        <label for="quando">Quando</label>
+        <select id="quando" name="quando">
+            <option value="in the morning">in the morning</option>
+            <option value="in the afternoom">in the afternoom</option>
+        </select>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <p id="fraseGerada"></p>
+
+    <script>
+        const form = document.getElementById('myForm');
+        const fraseGerada = document.getElementById('fraseGerada');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Evita o envio padrão do formulário
+
+            const pessoa = document.getElementById('pessoa').value;
+            const verbo = document.getElementById('verbo').value;
+            const oQue = document.getElementById('o_que').value;
+            const comQuem = document.getElementById('com_quem').value;
+            const complemento = document.getElementById('complemento').value;
+            const onde = document.getElementById('onde').value;
+            const quando = document.getElementById('quando').value;
+
+            const frase = `${pessoa} ${verbo} ${oQue} ${comQuem} ${onde} ${quando}`;
+            fraseGerada.textContent = frase;
+        });
+    </script>
+</body>
+</html>
